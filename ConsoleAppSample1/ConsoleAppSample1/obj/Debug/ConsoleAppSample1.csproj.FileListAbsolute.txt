@@ -1,0 +1,6 @@
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\ConsoleAppSample1\bin\Debug\ConsoleAppSample1.exe.config
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\ConsoleAppSample1\bin\Debug\ConsoleAppSample1.exe
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\ConsoleAppSample1\bin\Debug\ConsoleAppSample1.pdb
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\ConsoleAppSample1\obj\Debug\ConsoleAppSample1.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\ConsoleAppSample1\obj\Debug\ConsoleAppSample1.exe
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\ConsoleAppSample1\obj\Debug\ConsoleAppSample1.pdb
