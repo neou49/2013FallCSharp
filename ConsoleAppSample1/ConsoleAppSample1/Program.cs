@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppSample1
 {
+
+    public delegate int Multiply(int x, int y);
+
     public class Program
-    {
+    {        
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
@@ -35,5 +39,6 @@ namespace ConsoleAppSample1
             return json;
         }
 
+     
     }
 }
