@@ -5,3 +5,10 @@ D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\UnitTestConsoleAp
 D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\UnitTestConsoleAppSample1\obj\Debug\UnitTestConsoleAppSample1.pdb
 D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\UnitTestConsoleAppSample1\bin\Debug\ConsoleAppSample1.exe
 D:\Visual Studio 2012\SUNY_NewPaltz_Projects\ConsoleAppSample1\UnitTestConsoleAppSample1\bin\Debug\ConsoleAppSample1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ConsoleAppSample1\UnitTestConsoleAppSample1\obj\Debug\UnitTestConsoleAppSample1.csprojResolveAssemblyReference.cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ConsoleAppSample1\UnitTestConsoleAppSample1\bin\Debug\UnitTestConsoleAppSample1.dll
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ConsoleAppSample1\UnitTestConsoleAppSample1\bin\Debug\UnitTestConsoleAppSample1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ConsoleAppSample1\UnitTestConsoleAppSample1\bin\Debug\ConsoleAppSample1.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ConsoleAppSample1\UnitTestConsoleAppSample1\bin\Debug\ConsoleAppSample1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ConsoleAppSample1\UnitTestConsoleAppSample1\obj\Debug\UnitTestConsoleAppSample1.dll
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ConsoleAppSample1\UnitTestConsoleAppSample1\obj\Debug\UnitTestConsoleAppSample1.pdb
