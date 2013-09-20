@@ -1,0 +1,12 @@
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\LinqExerciseAssignment1\LinqExerciseAssignment1\bin\Debug\LinqExerciseAssignment1.exe.config
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\LinqExerciseAssignment1\LinqExerciseAssignment1\bin\Debug\LinqExerciseAssignment1.exe
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\LinqExerciseAssignment1\LinqExerciseAssignment1\bin\Debug\LinqExerciseAssignment1.pdb
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\LinqExerciseAssignment1\LinqExerciseAssignment1\obj\Debug\LinqExerciseAssignment1.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\LinqExerciseAssignment1\LinqExerciseAssignment1\obj\Debug\LinqExerciseAssignment1.exe
+D:\Visual Studio 2012\SUNY_NewPaltz_Projects\LinqExerciseAssignment1\LinqExerciseAssignment1\obj\Debug\LinqExerciseAssignment1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\LinqExerciseAssignment1\LinqExerciseAssignment1\bin\Debug\LinqExerciseAssignment1.exe.config
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\LinqExerciseAssignment1\LinqExerciseAssignment1\obj\Debug\LinqExerciseAssignment1.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\LinqExerciseAssignment1\LinqExerciseAssignment1\obj\Debug\LinqExerciseAssignment1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\LinqExerciseAssignment1\LinqExerciseAssignment1\bin\Debug\LinqExerciseAssignment1.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\LinqExerciseAssignment1\LinqExerciseAssignment1\bin\Debug\LinqExerciseAssignment1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\LinqExerciseAssignment1\LinqExerciseAssignment1\obj\Debug\LinqExerciseAssignment1.csprojResolveAssemblyReference.cache
