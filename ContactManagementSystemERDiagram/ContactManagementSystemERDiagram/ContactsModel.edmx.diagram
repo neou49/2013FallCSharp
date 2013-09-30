@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="29189af54e714226a4772b2c2beabcd8" Name="Diagram1" >
+        <EntityTypeShape EntityType="ContactsModel.Contact" Width="1.75" PointX="4.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContactsModel.PhoneNumber" Width="1.5" PointX="8.125" PointY="0.5" />
+        <AssociationConnector Association="ContactsModel.ContactPhoneNumber" />
+        <EntityTypeShape EntityType="ContactsModel.PhoneType" Width="1.5" PointX="10.375" PointY="0.5" />
+        <AssociationConnector Association="ContactsModel.PhoneTypePhoneNumber" />
+        <EntityTypeShape EntityType="ContactsModel.Email" Width="1.5" PointX="6.5" PointY="2.5" />
+        <EntityTypeShape EntityType="ContactsModel.EmailType" PointX="10.125" PointY="3.125" Width="1.5" />
+        <EntityTypeShape EntityType="ContactsModel.Address" Width="1.5" PointX="2.625" PointY="2.875" />
+        <EntityTypeShape EntityType="ContactsModel.Gender" Width="1.5" PointX="4.875" PointY="5.875" />
+        <EntityTypeShape EntityType="ContactsModel.Nationality" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="ContactsModel.State" Width="1.5" PointX="0.75" PointY="7.625" />
+        <AssociationConnector Association="ContactsModel.ContactEmail" />
+        <AssociationConnector Association="ContactsModel.EmailTypeEmail" />
+        <AssociationConnector Association="ContactsModel.GenderContact" />
+        <AssociationConnector Association="ContactsModel.NationalityContact" />
+        <EntityTypeShape EntityType="ContactsModel.Country" Width="1.5" PointX="0.625" PointY="2.75" />
+        <AssociationConnector Association="ContactsModel.CountryAddress" />
+        <AssociationConnector Association="ContactsModel.StateAddress" />
+        <AssociationConnector Association="ContactsModel.ContactAddress" />
+        <EntityTypeShape EntityType="ContactsModel.AddressType" Width="1.5" PointX="0.625" PointY="5.125" />
+        <AssociationConnector Association="ContactsModel.AddressTypeAddress" />
+        <EntityTypeShape EntityType="ContactsModel.Occupation" Width="1.75" PointX="9" PointY="5.5" />
+        <EntityTypeShape EntityType="ContactsModel.OccupationType" Width="1.5" PointX="11.25" PointY="5.375" />
+        <AssociationConnector Association="ContactsModel.OccupationTypeOccupation" />
+        <EntityTypeShape EntityType="ContactsModel.EducationLevel" Width="1.5" PointX="7" PointY="6.25" />
+        <AssociationConnector Association="ContactsModel.EducationLevelContact" />
+        <AssociationConnector Association="ContactsModel.OccupationContact" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

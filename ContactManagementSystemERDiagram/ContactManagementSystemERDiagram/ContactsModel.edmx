@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="ContactsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="ContactsModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ContactsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ContactsModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contacts" EntityType="ContactsModel.Contact" />
+          <EntitySet Name="PhoneNumbers" EntityType="ContactsModel.PhoneNumber" />
+          <AssociationSet Name="ContactPhoneNumber" Association="ContactsModel.ContactPhoneNumber">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <EntitySet Name="PhoneTypes" EntityType="ContactsModel.PhoneType" />
+          <AssociationSet Name="PhoneTypePhoneNumber" Association="ContactsModel.PhoneTypePhoneNumber">
+            <End Role="PhoneType" EntitySet="PhoneTypes" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <EntitySet Name="Emails" EntityType="ContactsModel.Email" />
+          <EntitySet Name="EmailTypes" EntityType="ContactsModel.EmailType" />
+          <EntitySet Name="Addresses" EntityType="ContactsModel.Address" />
+          <EntitySet Name="Genders" EntityType="ContactsModel.Gender" />
+          <EntitySet Name="Nationalities" EntityType="ContactsModel.Nationality" />
+          <EntitySet Name="States" EntityType="ContactsModel.State" />
+          <AssociationSet Name="ContactEmail" Association="ContactsModel.ContactEmail">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Email" EntitySet="Emails" />
+          </AssociationSet>
+          <AssociationSet Name="EmailTypeEmail" Association="ContactsModel.EmailTypeEmail">
+            <End EntitySet="EmailTypes" Role="EmailType" />
+            <End EntitySet="Emails" Role="Email" />
+          </AssociationSet>
+          <AssociationSet Name="GenderContact" Association="ContactsModel.GenderContact">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="NationalityContact" Association="ContactsModel.NationalityContact">
+            <End Role="Nationality" EntitySet="Nationalities" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <EntitySet Name="Countries" EntityType="ContactsModel.Country" />
+          <AssociationSet Name="CountryAddress" Association="ContactsModel.CountryAddress">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="StateAddress" Association="ContactsModel.StateAddress">
+            <End Role="State" EntitySet="States" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="ContactAddress" Association="ContactsModel.ContactAddress">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="AddressTypes" EntityType="ContactsModel.AddressType" />
+          <AssociationSet Name="AddressTypeAddress" Association="ContactsModel.AddressTypeAddress">
+            <End Role="AddressType" EntitySet="AddressTypes" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="Occupations" EntityType="ContactsModel.Occupation" />
+          <EntitySet Name="OccupationTypes" EntityType="ContactsModel.OccupationType" />
+          <AssociationSet Name="OccupationTypeOccupation" Association="ContactsModel.OccupationTypeOccupation">
+            <End Role="OccupationType" EntitySet="OccupationTypes" />
+            <End Role="Occupation" EntitySet="Occupations" />
+          </AssociationSet>
+          <EntitySet Name="EducationLevels" EntityType="ContactsModel.EducationLevel" />
+          <AssociationSet Name="EducationLevelContact" Association="ContactsModel.EducationLevelContact">
+            <End Role="EducationLevel" EntitySet="EducationLevels" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="OccupationContact" Association="ContactsModel.OccupationContact">
+            <End Role="Occupation" EntitySet="Occupations" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" Unicode="true" FixedLength="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" Unicode="true" FixedLength="false" MaxLength="50" />
+          <Property Type="String" Name="MiddleName" Nullable="false" FixedLength="false" MaxLength="25" Unicode="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="Int32" Name="Gender_Id" Nullable="false" />
+          <Property Type="Int32" Name="Nationality_Id" Nullable="false" />
+          <Property Type="Int32" Name="EducationLevel_Id" Nullable="false" />
+          <Property Type="Int32" Name="CurrentOccupation_Id" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="ContactsModel.ContactPhoneNumber" FromRole="Contact" ToRole="PhoneNumber" />
+          <NavigationProperty Name="Emails" Relationship="ContactsModel.ContactEmail" FromRole="Contact" ToRole="Email" />
+          <NavigationProperty Name="Gender" Relationship="ContactsModel.GenderContact" FromRole="Contact" ToRole="Gender" />
+          <NavigationProperty Name="Nationality" Relationship="ContactsModel.NationalityContact" FromRole="Contact" ToRole="Nationality" />
+          <NavigationProperty Name="Addresses" Relationship="ContactsModel.ContactAddress" FromRole="Contact" ToRole="Address" />
+          <NavigationProperty Name="EducationLevel" Relationship="ContactsModel.EducationLevelContact" FromRole="Contact" ToRole="EducationLevel" />
+          <NavigationProperty Name="Occupation" Relationship="ContactsModel.OccupationContact" FromRole="Contact" ToRole="Occupation" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Contact_Id" Nullable="false" />
+          <Property Type="Int32" Name="PhoneType_Id" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Contact" Relationship="ContactsModel.ContactPhoneNumber" FromRole="PhoneNumber" ToRole="Contact" />
+          <NavigationProperty Name="PhoneType" Relationship="ContactsModel.PhoneTypePhoneNumber" FromRole="PhoneNumber" ToRole="PhoneType" />
+        </EntityType>
+        <Association Name="ContactPhoneNumber">
+          <End Type="ContactsModel.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="ContactsModel.PhoneNumber" Role="PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="Contact_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PhoneType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" />
+          <Property Type="String" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" />
+          <Property Type="String" Name="UpdatedDate" Nullable="false" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="ContactsModel.PhoneTypePhoneNumber" FromRole="PhoneType" ToRole="PhoneNumber" />
+        </EntityType>
+        <Association Name="PhoneTypePhoneNumber">
+          <End Type="ContactsModel.PhoneType" Role="PhoneType" Multiplicity="1" />
+          <End Type="ContactsModel.PhoneNumber" Role="PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="PhoneType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Contact_Id" Nullable="false" />
+          <Property Type="Int32" Name="EmailType_Id" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Contact" Relationship="ContactsModel.ContactEmail" FromRole="Email" ToRole="Contact" />
+          <NavigationProperty Name="EmailType" Relationship="ContactsModel.EmailTypeEmail" FromRole="Email" ToRole="EmailType" />
+        </EntityType>
+        <EntityType Name="EmailType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="Value" Nullable="false" Type="String" Unicode="true" />
+          <NavigationProperty Name="Emails" Relationship="ContactsModel.EmailTypeEmail" FromRole="EmailType" ToRole="Email" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Contact_Id" Nullable="false" />
+          <Property Type="Int32" Name="AddressType_Id" Nullable="false" />
+          <Property Type="String" Name="AddressLine1" Nullable="false" Unicode="true" />
+          <Property Type="String" Name="AddressLine2" Nullable="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" Unicode="true" />
+          <Property Type="Int32" Name="State_Id" Nullable="false" />
+          <Property Type="String" Name="Zip" Nullable="true" />
+          <Property Type="Int32" Name="Country_Id" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" Unicode="true" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Country" Relationship="ContactsModel.CountryAddress" FromRole="Address" ToRole="Country" />
+          <NavigationProperty Name="State" Relationship="ContactsModel.StateAddress" FromRole="Address" ToRole="State" />
+          <NavigationProperty Name="Contact" Relationship="ContactsModel.ContactAddress" FromRole="Address" ToRole="Contact" />
+          <NavigationProperty Name="AddressType" Relationship="ContactsModel.AddressTypeAddress" FromRole="Address" ToRole="AddressType" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Contacts" Relationship="ContactsModel.GenderContact" FromRole="Gender" ToRole="Contact" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nationality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Contacts" Relationship="ContactsModel.NationalityContact" FromRole="Nationality" ToRole="Contact" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" />
+          <NavigationProperty Name="Addresses" Relationship="ContactsModel.StateAddress" FromRole="State" ToRole="Address" />
+          <Property Type="String" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="UpdatedDate" Nullable="false" />
+        </EntityType>
+        <Association Name="ContactEmail">
+          <End Type="ContactsModel.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="ContactsModel.Email" Role="Email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="Contact_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmailTypeEmail">
+          <End Type="ContactsModel.EmailType" Multiplicity="1" Role="EmailType" />
+          <End Type="ContactsModel.Email" Multiplicity="*" Role="Email" />
+          <ReferentialConstraint>
+            <Principal Role="EmailType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="EmailType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GenderContact">
+          <End Type="ContactsModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="ContactsModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="Gender_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NationalityContact">
+          <End Type="ContactsModel.Nationality" Role="Nationality" Multiplicity="1" />
+          <End Type="ContactsModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nationality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="Nationality_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Addresses" Relationship="ContactsModel.CountryAddress" FromRole="Country" ToRole="Address" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+        </EntityType>
+        <Association Name="CountryAddress">
+          <End Type="ContactsModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="ContactsModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Country_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StateAddress">
+          <End Type="ContactsModel.State" Role="State" Multiplicity="1" />
+          <End Type="ContactsModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="State_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContactAddress">
+          <End Type="ContactsModel.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="ContactsModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Contact_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Addresses" Relationship="ContactsModel.AddressTypeAddress" FromRole="AddressType" ToRole="Address" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+        </EntityType>
+        <Association Name="AddressTypeAddress">
+          <End Type="ContactsModel.AddressType" Role="AddressType" Multiplicity="1" />
+          <End Type="ContactsModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="AddressType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" Unicode="true" />
+          <Property Type="Int32" Name="OccupationType_Id" Nullable="false" />
+          <NavigationProperty Name="OccupationType" Relationship="ContactsModel.OccupationTypeOccupation" FromRole="Occupation" ToRole="OccupationType" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+          <NavigationProperty Name="Contacts" Relationship="ContactsModel.OccupationContact" FromRole="Occupation" ToRole="Contact" />
+        </EntityType>
+        <EntityType Name="OccupationType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="Occupations" Relationship="ContactsModel.OccupationTypeOccupation" FromRole="OccupationType" ToRole="Occupation" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+        </EntityType>
+        <Association Name="OccupationTypeOccupation">
+          <End Type="ContactsModel.OccupationType" Role="OccupationType" Multiplicity="1" />
+          <End Type="ContactsModel.Occupation" Role="Occupation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OccupationType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Occupation">
+              <PropertyRef Name="OccupationType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EducationLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+          <NavigationProperty Name="Contacts" Relationship="ContactsModel.EducationLevelContact" FromRole="EducationLevel" ToRole="Contact" />
+        </EntityType>
+        <Association Name="EducationLevelContact">
+          <End Type="ContactsModel.EducationLevel" Role="EducationLevel" Multiplicity="1" />
+          <End Type="ContactsModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EducationLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="EducationLevel_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OccupationContact">
+          <End Type="ContactsModel.Occupation" Role="Occupation" Multiplicity="1" />
+          <End Type="ContactsModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Occupation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="CurrentOccupation_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="ContactsModel" />
+        <Alias Key="Target" Value="ContactsModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="ContactsModelContainer" StorageEntityContainer="ContactsModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
