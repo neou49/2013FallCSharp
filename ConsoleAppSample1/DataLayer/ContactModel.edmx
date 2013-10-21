@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ContactModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ContactModelStoreContainer">
+          <EntitySet Name="ContactMethods" EntityType="ContactModel.Store.ContactMethods" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contacts" EntityType="ContactModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Keywords" EntityType="ContactModel.Store.Keywords" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ContactContactMethod" Association="ContactModel.Store.FK_ContactContactMethod">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="ContactMethods" EntitySet="ContactMethods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactKeyword" Association="ContactModel.Store.FK_ContactKeyword">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Keywords" EntitySet="Keywords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KeywordContactMethod" Association="ContactModel.Store.FK_KeywordContactMethod">
+            <End Role="Keywords" EntitySet="Keywords" />
+            <End Role="ContactMethods" EntitySet="ContactMethods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KeywordKeyword" Association="ContactModel.Store.FK_KeywordKeyword">
+            <End Role="Keywords" EntitySet="Keywords" />
+            <End Role="Keywords1" EntitySet="Keywords" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ContactMethods">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactId" Type="int" Nullable="false" />
+          <Property Name="KeywordId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="KeywordId" Type="int" Nullable="false" />
+          <Property Name="KeywordId1" Type="int" Nullable="false" />
+          <Property Name="KeywordId2" Type="int" Nullable="false" />
+          <Property Name="KeywordId3" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Keywords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactId" Type="int" Nullable="false" />
+          <Property Name="KeywordId" Type="int" Nullable="false" />
+          <Property Name="KeywordId1" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ContactContactMethod">
+          <End Role="Contacts" Type="ContactModel.Store.Contacts" Multiplicity="1" />
+          <End Role="ContactMethods" Type="ContactModel.Store.ContactMethods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContactMethods">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactKeyword">
+          <End Role="Contacts" Type="ContactModel.Store.Contacts" Multiplicity="1" />
+          <End Role="Keywords" Type="ContactModel.Store.Keywords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Keywords">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KeywordContactMethod">
+          <End Role="Keywords" Type="ContactModel.Store.Keywords" Multiplicity="1" />
+          <End Role="ContactMethods" Type="ContactModel.Store.ContactMethods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Keywords">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContactMethods">
+              <PropertyRef Name="KeywordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KeywordKeyword">
+          <End Role="Keywords" Type="ContactModel.Store.Keywords" Multiplicity="1" />
+          <End Role="Keywords1" Type="ContactModel.Store.Keywords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Keywords">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Keywords1">
+              <PropertyRef Name="KeywordId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ContactModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ContactModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contacts" EntityType="ContactModel.Contact" />
+          <EntitySet Name="Keywords" EntityType="ContactModel.Keyword" />
+          <EntitySet Name="ContactMethods" EntityType="ContactModel.ContactMethod" />
+          <AssociationSet Name="KeywordKeyword" Association="ContactModel.KeywordKeyword">
+            <End Role="Keyword" EntitySet="Keywords" />
+            <End Role="Keyword1" EntitySet="Keywords" />
+          </AssociationSet>
+          <AssociationSet Name="KeywordContactMethod" Association="ContactModel.KeywordContactMethod">
+            <End Role="Keyword" EntitySet="Keywords" />
+            <End Role="ContactMethod" EntitySet="ContactMethods" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Keyword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Children" Relationship="ContactModel.KeywordKeyword" FromRole="Keyword" ToRole="Keyword1" />
+          <NavigationProperty Name="Parent" Relationship="ContactModel.KeywordKeyword" FromRole="Keyword1" ToRole="Keyword" />
+          <Property Type="Int32" Name="KeywordId" Nullable="false" />
+          <NavigationProperty Name="ContactMethods" Relationship="ContactModel.KeywordContactMethod" FromRole="Keyword" ToRole="ContactMethod" />
+        </EntityType>
+        <EntityType Name="ContactMethod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Keyword" Relationship="ContactModel.KeywordContactMethod" FromRole="ContactMethod" ToRole="Keyword" />
+          <Property Type="Int32" Name="KeywordId" Nullable="false" />
+        </EntityType>
+        <Association Name="KeywordKeyword">
+          <End Type="ContactModel.Keyword" Role="Keyword" Multiplicity="1" />
+          <End Type="ContactModel.Keyword" Role="Keyword1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Keyword">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Keyword1">
+              <PropertyRef Name="KeywordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KeywordContactMethod">
+          <End Type="ContactModel.Keyword" Role="Keyword" Multiplicity="1" />
+          <End Type="ContactModel.ContactMethod" Role="ContactMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Keyword">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContactMethod">
+              <PropertyRef Name="KeywordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ContactModelStoreContainer" CdmEntityContainer="ContactModelContainer">
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="IsTypeOf(ContactModel.Contact)">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keywords">
+      <EntityTypeMapping TypeName="IsTypeOf(ContactModel.Keyword)">
+        <MappingFragment StoreEntitySet="Keywords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactMethods">
+      <EntityTypeMapping TypeName="IsTypeOf(ContactModel.ContactMethod)">
+        <MappingFragment StoreEntitySet="ContactMethods">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

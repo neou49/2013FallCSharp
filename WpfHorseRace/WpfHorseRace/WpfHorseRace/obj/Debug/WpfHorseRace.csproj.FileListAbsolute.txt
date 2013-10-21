@@ -1,0 +1,16 @@
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\bin\Debug\WpfHorseRace.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\bin\Debug\WpfHorseRace.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace.csprojResolveAssemblyReference.cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\Resources\RacePitBorderStyle.baml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\Window1.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\App.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace_MarkupCompile.cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace_MarkupCompile.lref
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\Resources\RaceHorseDataTemplate.baml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\Window1.baml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace.g.resources
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace.Properties.Resources.resources
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace.csproj.GenerateResource.Cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfHorseRace\WpfHorseRace\WpfHorseRace\obj\Debug\WpfHorseRace.pdb

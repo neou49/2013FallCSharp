@@ -1,0 +1,13 @@
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\bin\Debug\WpfSample1.exe.config
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\bin\Debug\WpfSample1.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\bin\Debug\WpfSample1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\MainWindow.baml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\MainWindow.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\App.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\WpfSample1_MarkupCompile.cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\WpfSample1.g.resources
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\WpfSample1.Properties.Resources.resources
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\WpfSample1.csproj.GenerateResource.Cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\WpfSample1.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\WpfSample1.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfSample1\WpfSample1\obj\Debug\WpfSample1.csprojResolveAssemblyReference.cache

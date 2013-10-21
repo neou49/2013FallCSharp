@@ -18,6 +18,33 @@ namespace ConsoleAppSample1
 
         public static void Main(string[] args)
         {
+            var db = new DataLayer.ContactModelContainer();
+            var keywords = db.Keyword;
+            foreach (var k in keywords)
+            {
+                Console.WriteLine(k.Name);
+                Console.WriteLine("{0} - {1}", k.Parent.Name, k.Name);
+            }
+            Console.ReadLine();
+
+            Console.WriteLine("Enter a contact in the following format (FirstName LastName Phone");
+            var results = Console.ReadLine();
+            var value = results.Split();
+            var contact = new DataLayer.Contact{ FirsName = values[0], LastName = values[1], KeywordId = values[3]};
+            db.Contacts.Add(contact);
+
+            contact.ContactMethods.add(new DataLayer.ContactMethod) { KeyworkID = 8, value
+            db.SaveChanges();
+
+
+
+
+
+
+
+
+
+
             //Console.WriteLine("Hello World");
             //Console.WriteLine("What is your username?");
             //string response = Console.ReadLine();

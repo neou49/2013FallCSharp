@@ -1,0 +1,22 @@
+D:\Visual Studio 2012\Wpf_BalchemSalesReport\WpfBasicContacts\WpfBasicContacts\bin\Debug\WpfBasicContacts.exe.config
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\WpfBasicContacts.exe.config
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\WpfBasicContacts.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\WpfBasicContacts.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts.csprojResolveAssemblyReference.cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\MainWindow.baml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\MainWindow.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\App.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts_MarkupCompile.cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts.g.resources
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts.Properties.Resources.resources
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts.csproj.GenerateResource.Cache
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts.exe
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\ContactsWindow.baml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\ContactsWindow.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\DataLayer.dll
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\EntityFramework.dll
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\DataLayer.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\EntityFramework.xml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\EntityFramework.SqlServer.xml
