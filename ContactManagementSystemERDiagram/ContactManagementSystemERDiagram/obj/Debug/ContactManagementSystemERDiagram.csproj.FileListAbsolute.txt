@@ -5,3 +5,4 @@ C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ContactManagementSystemERDiagram\
 C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ContactManagementSystemERDiagram\ContactManagementSystemERDiagram\bin\Debug\EntityFramework.xml
 C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ContactManagementSystemERDiagram\ContactManagementSystemERDiagram\obj\Debug\ContactManagementSystemERDiagram.dll
 C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ContactManagementSystemERDiagram\ContactManagementSystemERDiagram\obj\Debug\ContactManagementSystemERDiagram.pdb
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\ContactManagementSystemERDiagram\ContactManagementSystemERDiagram\obj\Debug\ContactManagementSystemERDiagram.csprojResolveAssemblyReference.cache
