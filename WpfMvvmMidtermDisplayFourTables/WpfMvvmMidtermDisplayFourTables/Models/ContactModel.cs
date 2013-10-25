@@ -11,8 +11,32 @@ namespace WpfMvvmMidtermDisplayFourTables
 {
     public class ContactModel : BaseVM
     {
-        private ObservableCollection<Data.Contact> _table1List;
-        public ObservableCollection<Data.Contact> Table1List
+
+        #region "Constructor"
+        public ContactModel()
+        {
+            this._table1List = new ObservableCollection<Data.Models.Contact>();
+            this._table2List = new ObservableCollection<Data.Models.Nationality>();
+            this._table3List = new ObservableCollection<Data.Models.EducationLevel>();
+            this._table4List = new ObservableCollection<Data.Models.Occupation>();
+        }
+        #endregion
+
+
+        private string _table1Count;
+        public string Table1Count
+        {
+            get { return _table1Count; }
+            set
+            {
+                _table1Count = value;
+                OnPropertyChanged("Table1List");
+            }
+        }
+
+
+        private ObservableCollection<Data.Models.Contact> _table1List;
+        public ObservableCollection<Data.Models.Contact> Table1List
         {
             get { return _table1List; }
             set
@@ -22,8 +46,20 @@ namespace WpfMvvmMidtermDisplayFourTables
             }
         }
 
-        private ObservableCollection<Data.Nationality> _table2List;
-        public ObservableCollection<Data.Nationality> Table2List
+        private string _table2Count;
+        public string Table2Count
+        {
+            get { return _table2Count; }
+            set
+            {
+                _table2Count = value;
+                OnPropertyChanged("Table1List");
+            }
+        }
+
+
+        private ObservableCollection<Data.Models.Nationality> _table2List;
+        public ObservableCollection<Data.Models.Nationality> Table2List
         {
             get { return _table2List; }
             set
@@ -34,8 +70,20 @@ namespace WpfMvvmMidtermDisplayFourTables
         }
 
 
-        private ObservableCollection<Data.EducationLevel> _table3List;
-        public ObservableCollection<Data.EducationLevel> Table3List
+        private string _table3Count;
+        public string Table3Count
+        {
+            get { return _table3Count; }
+            set
+            {
+                _table3Count = value;
+                OnPropertyChanged("Table1List");
+            }
+        }
+
+
+        private ObservableCollection<Data.Models.EducationLevel> _table3List;
+        public ObservableCollection<Data.Models.EducationLevel> Table3List
         {
             get { return _table3List; }
             set
@@ -46,8 +94,21 @@ namespace WpfMvvmMidtermDisplayFourTables
         }
 
 
-        private ObservableCollection<Data.Occupation> _table4List;
-        public ObservableCollection<Data.Occupation> Table4List
+        private string _table4Count;
+
+        public string Table4Count
+        {
+            get { return _table4Count; }
+            set
+            {
+                _table4Count = value;
+                OnPropertyChanged("Table1List");
+            }
+        }
+
+
+        private ObservableCollection<Data.Models.Occupation> _table4List;
+        public ObservableCollection<Data.Models.Occupation> Table4List
         {
             get { return _table4List; }
             set

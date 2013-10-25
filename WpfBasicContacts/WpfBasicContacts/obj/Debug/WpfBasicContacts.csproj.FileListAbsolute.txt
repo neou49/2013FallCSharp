@@ -20,3 +20,6 @@ C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts
 C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\DataLayer.pdb
 C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\EntityFramework.xml
 C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\BasicContacts.g.cs
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\WpfBasicContacts_MarkupCompile.lref
+C:\Users\VSeng\Documents\GitHub\2013FallCSharp\WpfBasicContacts\WpfBasicContacts\obj\Debug\BasicContacts.baml

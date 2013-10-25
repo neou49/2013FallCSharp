@@ -4,6 +4,7 @@ namespace DataLayer.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using DataLayer.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DataLayer.Models.CSharpContext>
     {
@@ -26,6 +27,17 @@ namespace DataLayer.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Keywords.AddOrUpdate(
+                new Keyword { Name = "Root", KeywordsId = 1 },
+                new Keyword { Name = "Person Types", KeywordsId = 1 },
+                new Keyword { Name = "Admin", KeywordsId = 2 }
+                );
+
+            context.Contacts.AddOrUpdate(
+                new Contact {  FirstName = "Mickey", LastName = "Duck", KeywordsId=3},
+                 new Contact { FirstName = "Mickey", LastName = "Mouse", KeywordsId = 3 }
+                );
         }
     }
 }

@@ -107,7 +107,6 @@
     <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="MiddleName" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
     <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Gender_Id" Type="Int32" Nullable="false" />
     <Property Name="Nationality_Id" Type="Int32" Nullable="false" />

@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201310040238561_Addresses.Designer.cs">
       <DependentUpon>201310040238561_Addresses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310242059182_Keywords.cs" />
+    <Compile Include="Migrations\201310242059182_Keywords.Designer.cs">
+      <DependentUpon>201310242059182_Keywords.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201310040238561_Addresses.resx">
       <DependentUpon>201310040238561_Addresses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310242059182_Keywords.resx">
+      <DependentUpon>201310242059182_Keywords.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

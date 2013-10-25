@@ -24,7 +24,6 @@ namespace WpfMvvmMidtermDisplayFourTables.Data
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string MiddleName { get; set; }
         public System.DateTime DateOfBirth { get; set; }
         public int Gender_Id { get; set; }
         public int Nationality_Id { get; set; }

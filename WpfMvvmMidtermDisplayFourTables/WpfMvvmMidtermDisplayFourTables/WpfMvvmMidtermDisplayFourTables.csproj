@@ -61,8 +61,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Views\ContactView.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -107,6 +107,10 @@
     <Compile Include="Data\Gender.cs">
       <DependentUpon>ContactEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\Models\Contact.cs" />
+    <Compile Include="Data\Models\EducationLevel.cs" />
+    <Compile Include="Data\Models\Nationality.cs" />
+    <Compile Include="Data\Models\Occupation.cs" />
     <Compile Include="Data\Nationality.cs">
       <DependentUpon>ContactEntityModel.tt</DependentUpon>
     </Compile>
@@ -126,11 +130,9 @@
       <DependentUpon>ContactEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactModel.cs" />
-    <Compile Include="Models\TableProperites\Contact.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="Views\ContactView.xaml.cs">
       <DependentUpon>ContactView.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
