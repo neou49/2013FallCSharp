@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSharpFall2013Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CSharpFall2013Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="CSharpFall2013Model.Address" />
+    <EntitySet Name="AddressTypes" EntityType="CSharpFall2013Model.AddressType" />
+    <EntitySet Name="Contacts" EntityType="CSharpFall2013Model.Contact" />
+    <EntitySet Name="Countries" EntityType="CSharpFall2013Model.Country" />
+    <EntitySet Name="EducationLevels" EntityType="CSharpFall2013Model.EducationLevel" />
+    <EntitySet Name="Emails" EntityType="CSharpFall2013Model.Email" />
+    <EntitySet Name="EmailTypes" EntityType="CSharpFall2013Model.EmailType" />
+    <EntitySet Name="Genders" EntityType="CSharpFall2013Model.Gender" />
+    <EntitySet Name="Nationalities" EntityType="CSharpFall2013Model.Nationality" />
+    <EntitySet Name="Occupations" EntityType="CSharpFall2013Model.Occupation" />
+    <EntitySet Name="OccupationTypes" EntityType="CSharpFall2013Model.OccupationType" />
+    <EntitySet Name="PhoneNumbers" EntityType="CSharpFall2013Model.PhoneNumber" />
+    <EntitySet Name="PhoneTypes" EntityType="CSharpFall2013Model.PhoneType" />
+    <EntitySet Name="States" EntityType="CSharpFall2013Model.State" />
+    <AssociationSet Name="FK_AddressTypeAddress" Association="CSharpFall2013Model.FK_AddressTypeAddress">
+      <End Role="AddressTypes" EntitySet="AddressTypes" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactAddress" Association="CSharpFall2013Model.FK_ContactAddress">
+      <End Role="Contacts" EntitySet="Contacts" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryAddress" Association="CSharpFall2013Model.FK_CountryAddress">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StateAddress" Association="CSharpFall2013Model.FK_StateAddress">
+      <End Role="States" EntitySet="States" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactEmail" Association="CSharpFall2013Model.FK_ContactEmail">
+      <End Role="Contacts" EntitySet="Contacts" />
+      <End Role="Emails" EntitySet="Emails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPhoneNumber" Association="CSharpFall2013Model.FK_ContactPhoneNumber">
+      <End Role="Contacts" EntitySet="Contacts" />
+      <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EducationLevelContact" Association="CSharpFall2013Model.FK_EducationLevelContact">
+      <End Role="EducationLevels" EntitySet="EducationLevels" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GenderContact" Association="CSharpFall2013Model.FK_GenderContact">
+      <End Role="Genders" EntitySet="Genders" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NationalityContact" Association="CSharpFall2013Model.FK_NationalityContact">
+      <End Role="Nationalities" EntitySet="Nationalities" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OccupationContact" Association="CSharpFall2013Model.FK_OccupationContact">
+      <End Role="Occupations" EntitySet="Occupations" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmailTypeEmail" Association="CSharpFall2013Model.FK_EmailTypeEmail">
+      <End Role="EmailTypes" EntitySet="EmailTypes" />
+      <End Role="Emails" EntitySet="Emails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OccupationTypeOccupation" Association="CSharpFall2013Model.FK_OccupationTypeOccupation">
+      <End Role="OccupationTypes" EntitySet="OccupationTypes" />
+      <End Role="Occupations" EntitySet="Occupations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhoneTypePhoneNumber" Association="CSharpFall2013Model.FK_PhoneTypePhoneNumber">
+      <End Role="PhoneTypes" EntitySet="PhoneTypes" />
+      <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Contact_Id" Type="Int32" Nullable="false" />
+    <Property Name="AddressType_Id" Type="Int32" Nullable="false" />
+    <Property Name="AddressLine1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AddressLine2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="State_Id" Type="Int32" Nullable="false" />
+    <Property Name="Zip" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Country_Id" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="AddressType" Relationship="CSharpFall2013Model.FK_AddressTypeAddress" FromRole="Addresses" ToRole="AddressTypes" />
+    <NavigationProperty Name="Contact" Relationship="CSharpFall2013Model.FK_ContactAddress" FromRole="Addresses" ToRole="Contacts" />
+    <NavigationProperty Name="Country" Relationship="CSharpFall2013Model.FK_CountryAddress" FromRole="Addresses" ToRole="Countries" />
+    <NavigationProperty Name="State" Relationship="CSharpFall2013Model.FK_StateAddress" FromRole="Addresses" ToRole="States" />
+  </EntityType>
+  <EntityType Name="AddressType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Addresses" Relationship="CSharpFall2013Model.FK_AddressTypeAddress" FromRole="AddressTypes" ToRole="Addresses" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Gender_Id" Type="Int32" Nullable="false" />
+    <Property Name="Nationality_Id" Type="Int32" Nullable="false" />
+    <Property Name="EducationLevel_Id" Type="Int32" Nullable="false" />
+    <Property Name="CurrentOccupation_Id" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Addresses" Relationship="CSharpFall2013Model.FK_ContactAddress" FromRole="Contacts" ToRole="Addresses" />
+    <NavigationProperty Name="Emails" Relationship="CSharpFall2013Model.FK_ContactEmail" FromRole="Contacts" ToRole="Emails" />
+    <NavigationProperty Name="PhoneNumbers" Relationship="CSharpFall2013Model.FK_ContactPhoneNumber" FromRole="Contacts" ToRole="PhoneNumbers" />
+    <NavigationProperty Name="EducationLevel" Relationship="CSharpFall2013Model.FK_EducationLevelContact" FromRole="Contacts" ToRole="EducationLevels" />
+    <NavigationProperty Name="Gender" Relationship="CSharpFall2013Model.FK_GenderContact" FromRole="Contacts" ToRole="Genders" />
+    <NavigationProperty Name="Nationality" Relationship="CSharpFall2013Model.FK_NationalityContact" FromRole="Contacts" ToRole="Nationalities" />
+    <NavigationProperty Name="Occupation" Relationship="CSharpFall2013Model.FK_OccupationContact" FromRole="Contacts" ToRole="Occupations" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Addresses" Relationship="CSharpFall2013Model.FK_CountryAddress" FromRole="Countries" ToRole="Addresses" />
+  </EntityType>
+  <EntityType Name="EducationLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Contacts" Relationship="CSharpFall2013Model.FK_EducationLevelContact" FromRole="EducationLevels" ToRole="Contacts" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Contact_Id" Type="Int32" Nullable="false" />
+    <Property Name="EmailType_Id" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Contact" Relationship="CSharpFall2013Model.FK_ContactEmail" FromRole="Emails" ToRole="Contacts" />
+    <NavigationProperty Name="EmailType" Relationship="CSharpFall2013Model.FK_EmailTypeEmail" FromRole="Emails" ToRole="EmailTypes" />
+  </EntityType>
+  <EntityType Name="EmailType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Emails" Relationship="CSharpFall2013Model.FK_EmailTypeEmail" FromRole="EmailTypes" ToRole="Emails" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Contacts" Relationship="CSharpFall2013Model.FK_GenderContact" FromRole="Genders" ToRole="Contacts" />
+  </EntityType>
+  <EntityType Name="Nationality">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Contacts" Relationship="CSharpFall2013Model.FK_NationalityContact" FromRole="Nationalities" ToRole="Contacts" />
+  </EntityType>
+  <EntityType Name="Occupation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="OccupationType_Id" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Contacts" Relationship="CSharpFall2013Model.FK_OccupationContact" FromRole="Occupations" ToRole="Contacts" />
+    <NavigationProperty Name="OccupationType" Relationship="CSharpFall2013Model.FK_OccupationTypeOccupation" FromRole="Occupations" ToRole="OccupationTypes" />
+  </EntityType>
+  <EntityType Name="OccupationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Occupations" Relationship="CSharpFall2013Model.FK_OccupationTypeOccupation" FromRole="OccupationTypes" ToRole="Occupations" />
+  </EntityType>
+  <EntityType Name="PhoneNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Contact_Id" Type="Int32" Nullable="false" />
+    <Property Name="PhoneType_Id" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Contact" Relationship="CSharpFall2013Model.FK_ContactPhoneNumber" FromRole="PhoneNumbers" ToRole="Contacts" />
+    <NavigationProperty Name="PhoneType" Relationship="CSharpFall2013Model.FK_PhoneTypePhoneNumber" FromRole="PhoneNumbers" ToRole="PhoneTypes" />
+  </EntityType>
+  <EntityType Name="PhoneType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedDate" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="PhoneNumbers" Relationship="CSharpFall2013Model.FK_PhoneTypePhoneNumber" FromRole="PhoneTypes" ToRole="PhoneNumbers" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedDate" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Addresses" Relationship="CSharpFall2013Model.FK_StateAddress" FromRole="States" ToRole="Addresses" />
+  </EntityType>
+  <Association Name="FK_AddressTypeAddress">
+    <End Role="AddressTypes" Type="CSharpFall2013Model.AddressType" Multiplicity="1" />
+    <End Role="Addresses" Type="CSharpFall2013Model.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddressTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="AddressType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactAddress">
+    <End Role="Contacts" Type="CSharpFall2013Model.Contact" Multiplicity="1" />
+    <End Role="Addresses" Type="CSharpFall2013Model.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contacts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="Contact_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryAddress">
+    <End Role="Countries" Type="CSharpFall2013Model.Country" Multiplicity="1" />
+    <End Role="Addresses" Type="CSharpFall2013Model.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StateAddress">
+    <End Role="States" Type="CSharpFall2013Model.State" Multiplicity="1" />
+    <End Role="Addresses" Type="CSharpFall2013Model.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="State_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactEmail">
+    <End Role="Contacts" Type="CSharpFall2013Model.Contact" Multiplicity="1" />
+    <End Role="Emails" Type="CSharpFall2013Model.Email" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contacts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emails">
+        <PropertyRef Name="Contact_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPhoneNumber">
+    <End Role="Contacts" Type="CSharpFall2013Model.Contact" Multiplicity="1" />
+    <End Role="PhoneNumbers" Type="CSharpFall2013Model.PhoneNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contacts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumbers">
+        <PropertyRef Name="Contact_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EducationLevelContact">
+    <End Role="EducationLevels" Type="CSharpFall2013Model.EducationLevel" Multiplicity="1" />
+    <End Role="Contacts" Type="CSharpFall2013Model.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EducationLevels">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="EducationLevel_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GenderContact">
+    <End Role="Genders" Type="CSharpFall2013Model.Gender" Multiplicity="1" />
+    <End Role="Contacts" Type="CSharpFall2013Model.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="Gender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NationalityContact">
+    <End Role="Nationalities" Type="CSharpFall2013Model.Nationality" Multiplicity="1" />
+    <End Role="Contacts" Type="CSharpFall2013Model.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nationalities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="Nationality_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OccupationContact">
+    <End Role="Occupations" Type="CSharpFall2013Model.Occupation" Multiplicity="1" />
+    <End Role="Contacts" Type="CSharpFall2013Model.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occupations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="CurrentOccupation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmailTypeEmail">
+    <End Role="EmailTypes" Type="CSharpFall2013Model.EmailType" Multiplicity="1" />
+    <End Role="Emails" Type="CSharpFall2013Model.Email" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmailTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emails">
+        <PropertyRef Name="EmailType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OccupationTypeOccupation">
+    <End Role="OccupationTypes" Type="CSharpFall2013Model.OccupationType" Multiplicity="1" />
+    <End Role="Occupations" Type="CSharpFall2013Model.Occupation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OccupationTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Occupations">
+        <PropertyRef Name="OccupationType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhoneTypePhoneNumber">
+    <End Role="PhoneTypes" Type="CSharpFall2013Model.PhoneType" Multiplicity="1" />
+    <End Role="PhoneNumbers" Type="CSharpFall2013Model.PhoneNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhoneTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumbers">
+        <PropertyRef Name="PhoneType_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

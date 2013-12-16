@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WpfMvvmFinalProjectContactManagement.Data.Models
+{
+    public class EducationLevel
+    {
+        public int Id { get; set; }
+        public string Value { get; set; }
+        public string Description { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public System.DateTime UpdatedDate { get; set; }
+    }
+}
