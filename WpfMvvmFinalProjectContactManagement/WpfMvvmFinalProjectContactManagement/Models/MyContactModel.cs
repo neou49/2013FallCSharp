@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using WpfMvvmFinalProjectContactManagement.Data.Models;
 
 namespace WpfMvvmFinalProjectContactManagement
 {
@@ -16,7 +17,10 @@ namespace WpfMvvmFinalProjectContactManagement
         public MyContactModel()
         {
             this._myContactNameList = new ObservableCollection<Data.Models.ContactName>();
-          
+            this._genderList = new Dictionary<int, string>();
+            this._educationLevelList = new Dictionary<int, string>();
+            this._currentOccupationList = new Dictionary<int, string>();
+            this._nationalityList = new Dictionary<int, string>();
         }
         #endregion
 
@@ -40,6 +44,28 @@ namespace WpfMvvmFinalProjectContactManagement
             {
                 _myContactNameList = value;
                 OnPropertyChanged("MyContactNameList");
+            }
+        }
+
+        private ContactName _myContactNameSelectedItem;
+        public ContactName MyContactNameSelectedItem
+        {
+            get { return _myContactNameSelectedItem; }
+            set
+            {
+                _myContactNameSelectedItem = value;
+                OnPropertyChanged("MyContactNameSelectedItem");
+            }
+        }
+
+        private int _myContactNameSelectedIndex;
+        public int MyContactNameSelectedIndex
+        {
+            get { return _myContactNameSelectedIndex; }
+            set
+            {
+                _myContactNameSelectedIndex = value;
+                OnPropertyChanged("MyContactNameSelectedIndex");
             }
         }
 
@@ -87,14 +113,88 @@ namespace WpfMvvmFinalProjectContactManagement
             }
         }
 
-        private List<string> _genderList;
-        public List<string> GenderList
+        private Dictionary<int,string> _genderList;
+        public Dictionary<int, string> GenderList
         {
             get { return _genderList; }
             set
             {
                 _genderList = value;
                 OnPropertyChanged("GenderList");
+            }
+        }
+        private KeyValuePair<int, string> _genderSelectedItem;
+        public KeyValuePair<int, string> GenderSelectedItem
+        {
+            get { return _genderSelectedItem; }
+            set
+            {
+                _genderSelectedItem = value;
+                OnPropertyChanged("GenderSelectedItem");
+            }
+        }
+
+        private Dictionary<int,string> _nationalityList;
+        public Dictionary<int,string> NationalityList
+        {
+            get { return _nationalityList; }
+            set
+            {
+                _nationalityList = value;
+                OnPropertyChanged("NationalityList");
+            }
+        }
+        private KeyValuePair<int, string> _nationalitySelectedItem;
+        public KeyValuePair<int, string> NationalitySelectedItem
+        {
+            get { return _nationalitySelectedItem; }
+            set
+            {
+                _nationalitySelectedItem = value;
+                OnPropertyChanged("NationalitySelectedItem");
+            }
+        }
+
+
+        private Dictionary<int,string> _educationLevelList;
+        public Dictionary<int,string> EducationLevelList
+        {
+            get { return _educationLevelList; }
+            set
+            {
+                _educationLevelList = value;
+                OnPropertyChanged("EductationLevelList");
+            }
+        }
+        private KeyValuePair<int, string> _educationLevelSelectedItem;
+        public KeyValuePair<int, string> EducationLevelSelectedItem
+        {
+            get { return _educationLevelSelectedItem; }
+            set
+            {
+                _educationLevelSelectedItem = value;
+                OnPropertyChanged("EducationLevelSelectedItem");
+            }
+        }
+
+        private Dictionary<int, string> _currentOccupationList;
+        public Dictionary<int, string> CurrentOccupationList
+        {
+            get { return _currentOccupationList; }
+            set
+            {
+                _currentOccupationList = value;
+                OnPropertyChanged("CurrentOccupationList");
+            }
+        }
+        private KeyValuePair<int,string> _currentOccupationSelectedItem;
+        public KeyValuePair<int,string> CurrentOccupationSelectedItem
+        {
+            get { return _currentOccupationSelectedItem; }
+            set
+            {
+                _currentOccupationSelectedItem = value;
+                OnPropertyChanged("CurrentOccupationSelectedItem");
             }
         }
 

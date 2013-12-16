@@ -5,11 +5,11 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 		xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
 		xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
-        Title="MyContactView" Height="722" Width="951.875">
+        Title="My Contact View" Height="722" Width="951.875">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="127*"/>
-            <ColumnDefinition Width="345*"/>
+            <ColumnDefinition Width="287*"/>
+            <ColumnDefinition Width="657*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="1" Margin="0,0,0,10">
             <Grid.RowDefinitions>
@@ -19,33 +19,33 @@
                 <RowDefinition Height="82*"/>
             </Grid.RowDefinitions>
             <Grid Margin="0,0,0,5">
-                <GroupBox Header="Contact Details" Margin="5,5,5,0">
+                <GroupBox Header="Contact Details" Margin="10,5,5,0">
                     <Grid Margin="0,0,-2,-2">
                         <Label Content="First Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="115"/>
                         <TextBox HorizontalAlignment="Left" Height="23" Margin="143,13,0,0" TextWrapping="Wrap" Text="{Binding FirstName}" VerticalAlignment="Top" Width="191"/>
                         <Label Content="Last Name:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="115"/>
-                        <TextBox HorizontalAlignment="Left" Height="23" Margin="143,41,0,0" TextWrapping="Wrap" Text="{Binding FirstName}" VerticalAlignment="Top" Width="191"/>
+                        <TextBox HorizontalAlignment="Left" Height="23" Margin="143,41,0,0" TextWrapping="Wrap" Text="{Binding LastName}" VerticalAlignment="Top" Width="191"/>
                         <Label Content="Date of Birth:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="115"/>
+                        <DatePicker SelectedDate="{Binding DateOfBirth}" HorizontalAlignment="Left" Margin="143,69,0,0" VerticalAlignment="Top" Width="191"/>
                         <Button Content="NEW" HorizontalAlignment="Left" Margin="92,0,0,10" Width="88" Height="32" VerticalAlignment="Bottom"/>
                         <Button Content="DELETE" HorizontalAlignment="Left" Margin="231,0,0,10" Width="88" Height="32" VerticalAlignment="Bottom"/>
                         <Button Content="SAVE" HorizontalAlignment="Left" Margin="380,0,0,10" Width="88" Height="32" VerticalAlignment="Bottom"/>
                         <Label Content="Gender:" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="115"/>
-                        <ComboBox ItemsSource="{Binding GenderList}" HorizontalAlignment="Left" Margin="143,96,0,0" VerticalAlignment="Top" Width="191"/>
+                        <ComboBox ItemsSource="{Binding GenderList}" SelectedItem="{Binding GenderSelectedItem}" HorizontalAlignment="Left" Margin="143,96,0,0" VerticalAlignment="Top" Width="191"/>
                         <Label Content="Nationality:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="115"/>
-                        <ComboBox ItemsSource="{Binding NationalityList}" HorizontalAlignment="Left" Margin="143,123,0,0" VerticalAlignment="Top" Width="191"/>
+                        <ComboBox ItemsSource="{Binding NationalityList}" SelectedItem="{Binding NationalitySelectedItem}" HorizontalAlignment="Left" Margin="143,123,0,0" VerticalAlignment="Top" Width="191"/>
                         <Label Content="Education Level:" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Width="115"/>
-                        <ComboBox ItemsSource="{Binding EducationLevelList}" HorizontalAlignment="Left" Margin="143,150,0,0" VerticalAlignment="Top" Width="191"/>
-                        <DatePicker HorizontalAlignment="Left" Margin="143,69,0,0" VerticalAlignment="Top" Width="191"/>
+                        <ComboBox ItemsSource="{Binding EducationLevelList}" SelectedItem="{Binding EducationLevelSelectedItem}" HorizontalAlignment="Left" Margin="143,150,0,0" VerticalAlignment="Top" Width="191"/>
                         <Label Content="Current Occupation:" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="115"/>
-                        <ComboBox ItemsSource="{Binding OccupationList}" HorizontalAlignment="Left" Margin="143,177,0,0" VerticalAlignment="Top" Width="191"/>
+                        <ComboBox ItemsSource="{Binding CurrentOccupationList}" SelectedItem="{Binding CurrentOccupationSelectedItem}" HorizontalAlignment="Left" Margin="143,177,0,0" VerticalAlignment="Top" Width="191"/>
                     </Grid>
                 </GroupBox>
             </Grid>
-            <Grid Grid.Row="1" Grid.RowSpan="3"/>
+            <Grid Grid.Row="1" Grid.RowSpan="3" Margin="10,0,0,0"/>
         </Grid>
-        <Label Content="First Name Search:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="24" Width="109"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="119,10,0,0" TextWrapping="Wrap" Text="{Binding FirstNameSearch}" VerticalAlignment="Top" Width="130"/>
-        <GroupBox  Header="Contact List" Margin="5,39,5,5">
+        <Label Content="First Name Search:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="24" Width="109" Visibility="Hidden"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="119,10,0,0" TextWrapping="Wrap" Text="{Binding FirstNameSearch}" VerticalAlignment="Top" Width="130" Visibility="Hidden"/>
+        <GroupBox  Header="Contact List" Margin="5,39,10,5">
             <DataGrid Margin="0,0,-2,-3"
                 ClipboardCopyMode="IncludeHeader" 
 					  AutoGenerateColumns="True"
@@ -63,7 +63,9 @@
                 </i:Interaction.Triggers>
             </DataGrid>
         </GroupBox>
-        <GridSplitter HorizontalAlignment="Stretch" Margin="249,0,0,5"/>
+        <GridSplitter   VerticalAlignment="Stretch" Margin="0,-1,0,6" RenderTransformOrigin="0.5,0.5" Width="8">
+           
+        </GridSplitter>
 
     </Grid>
 </Window>

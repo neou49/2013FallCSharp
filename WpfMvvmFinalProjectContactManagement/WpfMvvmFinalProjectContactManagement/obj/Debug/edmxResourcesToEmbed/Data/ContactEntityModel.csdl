@@ -198,8 +198,8 @@
     <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="OccupationType_Id" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" Nullable="false" />
     <NavigationProperty Name="Contacts" Relationship="CSharpFall2013Model.FK_OccupationContact" FromRole="Occupations" ToRole="Contacts" />
     <NavigationProperty Name="OccupationType" Relationship="CSharpFall2013Model.FK_OccupationTypeOccupation" FromRole="Occupations" ToRole="OccupationTypes" />
   </EntityType>

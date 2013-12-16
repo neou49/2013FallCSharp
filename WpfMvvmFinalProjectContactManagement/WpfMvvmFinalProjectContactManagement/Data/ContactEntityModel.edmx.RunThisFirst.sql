@@ -580,6 +580,8 @@ go
 insert into Occupations values('Software Developer', 'Programmer who designs application for end user', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 insert into occupations values('Secretary', 'Greeting people and answering phone calls',3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 insert into Occupations values('Handyman', 'Fixing stuffs',2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into Occupations values('Student', 'Full time student',2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into Occupations values('Unemployed', 'Unemployed',2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 go
 
 insert into EducationLevels values('High school', 'Finished High School', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
