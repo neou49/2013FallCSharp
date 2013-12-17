@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfAutoCompleteTextboxInClassFinal.AutoCompleteTextboxView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+        xmlns:local="clr-namespace:WpfAutoCompleteTextboxInClassFinal"
+        Title="AutoCompleteTextboxView" Height="358" Width="491" FontSize="13">
+    <Grid>
+        <Label Content="Enter City:" HorizontalAlignment="Left" Margin="26,24,0,0" VerticalAlignment="Top" Height="32" Width="89"/>
+
+        <toolkit:AutoCompleteBox
+            ItemsSource="{Binding CityList}"
+            SelectedItem="{Binding SelectedCity, Mode=TwoWay}"          
+             IsTextCompletionEnabled="True"
+            MinimumPrefixLength="0"
+            FilterMode="StartsWith"
+            Margin="133,24,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="227" Height="32"            
+            >
+
+        </toolkit:AutoCompleteBox>
+    </Grid>
+</Window>
