@@ -13,15 +13,17 @@ using System.Web.Services.Description;
 namespace WpfAutoCompleteTextboxInClassFinal
 {
 
-    public class AutoCompleteTextboxViewModel: AutoCompleteTextboxModel
+    public class AutoCompleteTextboxViewModel : AutoCompleteTextboxModel
     {
 
         #region "Constructor"
         public AutoCompleteTextboxViewModel()
         {
+       
             Search();
         }
         #endregion
+
 
         public async void Search()
         {
@@ -31,11 +33,18 @@ namespace WpfAutoCompleteTextboxInClassFinal
             HttpResponseMessage response = await client.GetAsync(uri);
             response.EnsureSuccessStatusCode();
 
-            string returnString = await response.Content.ReadAsStringAsync();            
+            string returnString = await response.Content.ReadAsStringAsync();
+            returnString = returnString.Replace('[', ' ');
+            returnString = returnString.Replace(']', ' ');
+            returnString = returnString.Replace("\",\"", "|");
+            returnString = returnString.Replace("\"", "");
+            returnString = returnString.Trim();
+            List<string> splitString = returnString.Split('|').ToList();
 
-            this.CityList.Add(returnString);
-            //string responseBody = await response.Content.ReadAsStringAsync();         
-            
+
+            this.CityList = splitString;
+                 
+
         }
 
     }

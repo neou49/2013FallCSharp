@@ -10,9 +10,9 @@
         <toolkit:AutoCompleteBox
             ItemsSource="{Binding CityList}"
             SelectedItem="{Binding SelectedCity, Mode=TwoWay}"          
-             IsTextCompletionEnabled="True"
+            IsTextCompletionEnabled="True"
             MinimumPrefixLength="0"
-            FilterMode="StartsWith"
+            FilterMode="Contains"
             Margin="133,24,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
